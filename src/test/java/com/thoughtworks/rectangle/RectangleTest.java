@@ -1,12 +1,14 @@
 package com.thoughtworks.rectangle;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
 import org.junit.jupiter.api.Test;
 
 public class RectangleTest{
     @Test
-    public void calculateAreaWhenLengthIsSixAndBreadthIsFour() {
-        assertEquals(new Rectangle(6,4).calculateArea(),24, "The Area Of Triangle with l=6  and b=4 should be 24");
+    public void shouldReturnAreaWhenLengthAndBreadthIsGiven() {
+        assertThat(new Rectangle(6,4).calculateArea(),is(equalTo(24)));
     }
 
 }
